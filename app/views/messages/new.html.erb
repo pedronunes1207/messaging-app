@@ -1,2 +1,16 @@
-<h1>Messages#new</h1>
-<p>Find me in app/views/messages/new.html.erb</p>
+<h1>New Message</h1>
+
+<%= form_with(model: [ @message.room, @message ]) do |form| %>
+  <div class="field">
+    <%= form.label :content, style: "display: block" %>
+    <%= form.text_field :content %>
+  </div>
+
+  <div>
+    <%= form.submit 'Send' %>
+  </div>
+<% end %>
+
+<div>
+  <%= link_to "Back", @message.room %>
+</div>
